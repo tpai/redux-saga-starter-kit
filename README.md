@@ -1,6 +1,8 @@
 Redux Saga Timer
 ===
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tpai/redux-saga-timer.svg)](https://greenkeeper.io/)
+
 Simple example for implementing redux-saga.
 
 [![Greenkeeper badge][greenkeeper-badge]][greenkeeper]
