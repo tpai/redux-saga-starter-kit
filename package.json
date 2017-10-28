@@ -2,9 +2,15 @@
   "name": "redux-saga-timer",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "8.1.4"
+  },
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+    "start": "node server.js",
+    "build": "webpack -p --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --hot --inline --config webpack.config.dev.js",
+    "test": "echo \"no test specified\""
   },
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -16,6 +22,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.10.0",
     "eslint-plugin-react": "^7.4.0",
+    "express": "^4.16.2",
+    "express-history-api-fallback": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
