@@ -3,6 +3,8 @@ Redux Saga Timer
 
 Simple example for implementing redux-saga.
 
+![demo](https://media.giphy.com/media/l1J9wzTabGT09H0xa/giphy.gif)
+
 Usage
 ===
 
