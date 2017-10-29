@@ -1,3 +1,4 @@
+import { delay } from 'redux-saga';
 import { put, call, take, fork, cancel, select } from 'redux-saga/effects';
 
 import {
@@ -8,8 +9,6 @@ import {
 } from 'redux/modules/timer';
 import { T_INCREASE } from 'redux/modules/T';
 import { VALUE_SYNC } from 'redux/modules/value';
-
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function* tick() {
     while(true) {
