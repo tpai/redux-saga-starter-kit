@@ -17,6 +17,7 @@ const Panel = ({
     step,
     value,
     initValue,
+    actions,
     actions: {
         setActive,
         setInactive,
@@ -58,7 +59,7 @@ Panel.propTypes = {
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
-    actinos: bindActionCreators({
+    actions: bindActionCreators({
         ...initValueActions,
         ...stepActions,
         ...timerActions,
