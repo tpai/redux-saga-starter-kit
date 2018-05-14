@@ -1,6 +1,7 @@
 const config = require('./webpack.config.js');
 
 module.exports = Object.assign({}, config, {
+    mode: 'development',
     devtool: 'cheap-module-source-map',
     devServer: {
         host: 'localhost',

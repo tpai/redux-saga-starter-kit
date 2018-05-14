@@ -1,3 +1,6 @@
 const config = require('./webpack.config.js');
 
-module.exports = Object.assign({}, config, { entry: './src/index' });
+module.exports = Object.assign({}, config, {
+  mode: 'production',
+  entry: './src/index'
+});
