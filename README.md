@@ -1,34 +1,40 @@
-Redux Saga Timer
+Redux Saga Starter Kit
 ===
 
-Simple example for implementing redux-saga.
+Redux Saga Starter kit is a boilerplate for web development built on top of React, Redux, Redux Saga and Webpack 4.
 
 [![Greenkeeper badge][greenkeeper-badge]][greenkeeper]
 [![Travis Build Status][build-badge]][build]
 [![Dependency Status][deps-badge]][deps]
 [![Heroku][heroku-deployment-badge]][heroku-app]
 
-![demo](https://media.giphy.com/media/l1J9wzTabGT09H0xa/giphy.gif)
-
 Usage
 ===
 
-Run development server
+Launch development server
 
 ```
-yarn start
+yarn dev
 ```
 
-The app listen on `http://localhost:3000`.
+Then visit `http://localhost:3000`.
 
-[build-badge]: https://travis-ci.org/tpai/redux-saga-timer.svg?branch=master
-[build]: https://travis-ci.org/tpai/redux-saga-timer
+-----
 
-[deps-badge]: https://david-dm.org/tpai/redux-saga-timer.svg
-[deps]: https://david-dm.org/tpai/redux-saga-timer
+Build production bundle
 
-[heroku-deployment-badge]: https://heroku-badge.herokuapp.com/?app=redux-saga-timer
-[heroku-app]: https://redux-saga-timer.herokuapp.com
+```
+yarn build
+```
 
-[greenkeeper-badge]: https://badges.greenkeeper.io/tpai/redux-saga-timer.svg
+[build-badge]: https://travis-ci.org/tpai/redux-saga-starter-kit.svg?branch=master
+[build]: https://travis-ci.org/tpai/redux-saga-starter-kit
+
+[deps-badge]: https://david-dm.org/tpai/redux-saga-starter-kit.svg
+[deps]: https://david-dm.org/tpai/redux-saga-starter-kit
+
+[heroku-deployment-badge]: https://heroku-badge.herokuapp.com/?app=redux-saga-starter-kit
+[heroku-app]: https://redux-saga-starter-kit.herokuapp.com
+
+[greenkeeper-badge]: https://badges.greenkeeper.io/tpai/redux-saga-starter-kit.svg
 [greenkeeper]: https://greenkeeper.io/
