@@ -1,18 +1,18 @@
-var fallback = require('express-history-api-fallback');
-var path = require('path');
-var express = require('express');
-var app = express();
-var http = require('http').createServer(app);
-var port = process.env.PORT || 3000;
+const fallback = require('express-history-api-fallback');
+const path = require('path');
+const express = require('express');
+const app = express();
+const http = require('http').createServer(app);
+const port = process.env.PORT || 3000;
 
-var root = path.resolve(__dirname, './public');
+const root = path.resolve(__dirname, './dist');
 app.use(express.static(root));
-app.use(fallback('index.html', { root: root }));
+app.use(fallback('index.html', { root }));
 
 app.get('*', function (request, response){
-    response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
 });
 
 http.listen(port, function() {
-    console.log("Listening http://localhost:" + port);
+  console.log("Listening http://localhost:" + port);
 });

@@ -1,21 +1,23 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import createSaga from 'redux-saga';
+import { createLogger } from 'redux-logger';
 
 import reducers from 'redux/modules/';
-import sagas from 'sagas/';
+import rootSaga from 'sagas/';
 
-const sagaMiddleware = createSaga();
+const saga = createSaga();
+const logger = createLogger({ diff: true });
 
-const configureStore = (initialState = {}) => {
-    const store = createStore(
-        combineReducers(reducers),
-        compose(
-            applyMiddleware(sagaMiddleware),
-            window.devToolsExtension ? window.devToolsExtension() : f => f
-        )
-    );
-    sagaMiddleware.run(sagas);
-    return store;
-};
+const middlewareEnhancer = (() =>
+  process.env.NODE_ENV === 'development'
+    ? composeWithDevTools(applyMiddleware(saga, logger))
+    : applyMiddleware(saga))();
 
-export default configureStore();
+export default createStore(
+  combineReducers(reducers),
+  undefined,
+  middlewareEnhancer,
+);
+
+saga.run(rootSaga);

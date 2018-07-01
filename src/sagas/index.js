@@ -1,7 +1,5 @@
-import { watchTimer } from 'sagas/timer';
+import { all } from 'redux-saga/effects';
 
 export default function* rootSaga() {
-    yield [
-        watchTimer()
-    ]
+  yield all([]);
 }
