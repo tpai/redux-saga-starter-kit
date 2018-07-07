@@ -1,8 +1,26 @@
 sudo: false
 language: node_js
 node_js:
-- "8"
+  - "8"
+env:
+  global:
+    - CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID
+before_install:
+  - yarn global add greenkeeper-lockfile@1
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - greenkeeper-lockfile-update
+script:
+  - yarn test:cov
+after_script:
+  - yarn add coveralls && cat ./tests/__coverage__/lcov.info | coveralls
+  - ./cc-test-reporter format-coverage -t lcov ./tests/__coverage__/lcov.info
+  - ./cc-test-reporter upload-coverage
+  - greenkeeper-lockfile-upload
 deploy:
   provider: heroku
-  api_key: $HEROKU_API_KEY
+  api_key:
+    secure: $HEROKU_API_KEY
   app: redux-saga-starter-kit
