@@ -13,7 +13,7 @@ before_script:
   - ./cc-test-reporter before-build
   - greenkeeper-lockfile-update
 script:
-  - yarn test:cov
+  - yarn test
 after_script:
   - yarn add coveralls && cat ./tests/__coverage__/lcov.info | coveralls
   - ./cc-test-reporter format-coverage -t lcov ./tests/__coverage__/lcov.info
