@@ -10,7 +10,8 @@
     "build": "yarn run clean && NODE_ENV=production webpack -p --config webpack.config.prod.js",
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "clean": "rm -rf dist/",
-    "test": "echo \"no test specified\""
+    "test": "echo \"no test specified\"",
+    "test:cov": "echo \"no test specified\""
   },
   "dependencies": {
     "express": "^4.16.3",
