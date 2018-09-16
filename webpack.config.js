@@ -7,7 +7,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss', '.css'],
   },
   entry: {
-    app: ['babel-polyfill', path.resolve(__dirname, 'src/index')],
+    app: path.resolve(__dirname, 'src/index'),
     vendor: [
       'react',
       'react-dom',
