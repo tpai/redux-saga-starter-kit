@@ -1,9 +1,6 @@
 {
   "name": "redux-saga-starter-kit",
   "version": "1.0.0",
-  "engines": {
-    "node": "^8.9.4"
-  },
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
